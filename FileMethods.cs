@@ -49,6 +49,7 @@ namespace TollBooth
                     _log.LogInformation($"Beginning file upload: {blobName}");
                     try
                     {
+                        _log.LogTrace($"Enter try block in GenerateAndSaveCsv:52");
                         var container = _blobClient.GetContainerReference(_containerName);
 
                         // Retrieve reference to a blob.
@@ -67,7 +68,7 @@ namespace TollBooth
                     }
                 }
             }
-
+            _log.LogTrace($"The state of successful flag is {successful}");
             return successful;
         }
 
